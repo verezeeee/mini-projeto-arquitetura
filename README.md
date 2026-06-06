@@ -97,7 +97,7 @@ C4Container
 
 ```
 fintech-wallet/
-├── src/                          # Código-fonte dos serviços Lambda
+├── src/                          # Estrutura de pastas dos domínios (apenas referencial, sem código)
 │   ├── wallet-service/
 │   ├── credit-engine/
 │   ├── auth-service/
@@ -118,66 +118,16 @@ fintech-wallet/
 
 ---
 
-## 🚀 Como Executar o Projeto Localmente
+## 📝 Natureza do Repositório (Apenas Documentação)
 
-### Pré-requisitos
+> [!IMPORTANT]
+> **Este repositório é 100% focado na documentação arquitetural da FinTech Wallet.** Não há código de implementação executável ou projeto para rodar localmente neste repositório.
 
-- [Node.js 20+](https://nodejs.org/)
-- [Python 3.11+](https://python.org/)
-- [AWS CLI v2](https://aws.amazon.com/cli/) configurado
-- [AWS SAM CLI](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/install-sam-cli.html)
-- [Docker](https://www.docker.com/) (para emulação local das Lambdas)
+Todas as especificações técnicas, tomadas de decisão e visões de arquitetura estão organizadas nas seguintes seções:
 
-### 1. Clone o repositório
-
-```bash
-git clone https://github.com/seu-usuario/fintech-wallet.git
-cd fintech-wallet
-```
-
-### 2. Configure variáveis de ambiente
-
-```bash
-cp .env.example .env
-# Edite .env com suas credenciais de desenvolvimento
-```
-
-### 3. Instale dependências por serviço
-
-```bash
-cd src/wallet-service && npm install
-cd ../credit-engine && pip install -r requirements.txt
-cd ../auth-service && npm install
-```
-
-### 4. Execute localmente com AWS SAM
-
-```bash
-# Na raiz do projeto
-sam local start-api --port 3000
-```
-
-O API Gateway local estará disponível em `http://localhost:3000`.
-
-### 5. Execute os testes
-
-```bash
-# Testes unitários (wallet-service)
-cd src/wallet-service && npm test
-
-# Testes unitários (credit-engine)
-cd src/credit-engine && pytest
-```
-
----
-
-## 👥 Equipe
-
-| Nome | Matrícula |
-|------|-----------|
-| [Nome 1] | [Matrícula] |
-| [Nome 2] | [Matrícula] |
-| [Nome 3] | [Matrícula] |
+- 📑 **Documento de Arquitetura de Software (SAD):** Localizado em [sad-fase3.md](./docs/sad/sad-fase3.md), descreve detalhadamente as visões de arquitetura de software (lógica, dados, implantação).
+- 📄 **Architecture Decision Records (ADRs):** Localizados na pasta [docs/adrs/](./docs/adrs/), justificando as escolhas tecnológicas adotadas.
+- ⚙️ **Guias de Conformidade e Operações (Gold Plating):** Localizados na pasta [gold-plating/](./gold-plating/), abordando pipeline de CI/CD, runbook e conformidade PCI/BACEN.
 
 ---
 
